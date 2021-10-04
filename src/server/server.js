@@ -3,7 +3,7 @@ const request = require("request");
 const cors = require("cors");
 const querystring = require("query-string");
 const cookieParser = require("cookie-parser");
-require('dotenv').config()
+require("dotenv").config();
 
 const clientId = process.env.CLIENT_ID;
 const clientSecret = process.env.CLIENT_SECRET;
@@ -97,7 +97,8 @@ app.get("/callback", function(req, res) {
           console.log(body);
         });
         // Redirects to browser to make request from there
-        res.redirect(301,
+        res.redirect(
+          301,
           server_address +
             "/login?" +
             querystring.stringify({
