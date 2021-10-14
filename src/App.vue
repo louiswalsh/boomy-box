@@ -1,27 +1,28 @@
 <template>
   <div id="app">
-    <TheNavigation />
+    <NavBar />
     <router-view />
   </div>
 </template>
 
 <script>
-import TheNavigation from "@/components/TheNavigation";
+import NavBar from "@/components/NavBar";
 
 export default {
   components: {
-    TheNavigation
-  }
+     NavBar
+   }
 };
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "objektiv-mk2", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  color: white;
+  background-image: url("./assets/pngs/starry_background_fixed.png");
+  height: 100vh;
 }
 h2 {
   padding: 20px;

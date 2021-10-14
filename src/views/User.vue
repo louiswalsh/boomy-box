@@ -2,7 +2,7 @@
   <div class="login">
     <div v-if="user">
       <h2>Welcome {{ user.display_name }}</h2>
-      <!-- <b-row>
+      <b-row>
         <b-col>
           <img
             class="user-image"
@@ -30,7 +30,7 @@
             <dd class="col-sm-8">{{ user.country }}</dd>
           </dl>
         </b-col>
-      </b-row> -->
+      </b-row>
       <button @click="logOut" class="btn btn-secondary">Log out</button>
     </div>
   </div>
