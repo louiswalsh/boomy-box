@@ -24,9 +24,16 @@ const routes = [
       },
       {
         path: "",
-        redirect: "/user"
+        redirect: "/home"
       }
     ]
+  },
+  {
+    path: "/search",
+    name: "Search",
+    component: () =>
+      import(/* webpackChunkName: "user" */ "../views/Search.vue"),
+    meta: { requiresAuth: true }
   },
   {
     path: "/about",
