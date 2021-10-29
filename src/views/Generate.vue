@@ -1,6 +1,8 @@
 <template>
   <div class="about">
-    <v-btn elevation="2" @click="findSongs">Generate Boomy Playlist</v-btn>
+    <h1>Generate Playlist</h1>
+    <v-divider class="divider"></v-divider>
+    <v-btn elevation="2" @click="findSongs" class="button">Click here - 🚀</v-btn>
   </div>
 </template>
 
@@ -38,15 +40,14 @@ export default {
           { uris: this.responseSongs },
           this.playlistID
         );
-        console.log('Success');
+        console.log("Success");
       } catch (error) {
         console.log(`${error} - ${error.response.data.error.message}`);
       }
     },
     getRandomEmoji() {
       var result = "";
-      var characters =
-        "🤖🎃🌙🌨🍋🥞🍪🏀🏆🥇🎬🎤🎧🎼🎹🥁🛸🎙💎🔮🧲💿🏝🚨🎸🧂";
+      var characters = "🤖🎃🌙🌨🍋🥞🍪🏀🏆🥇🎬🎤🎧🎼🎹🥁🛸🎙💎🔮🧲💿🏝🚨🎸🧂";
       const rndInt = this.randomIntFromInterval(1, characters.length);
       result = characters.charAt(rndInt);
       return result;
@@ -57,3 +58,34 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+h1 {
+  text-align: center;
+  font-size: 10vh;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.about {
+  text-align: center;
+}
+
+.button {
+  min-height: 100px;
+  width: 400px;
+}
+
+p {
+  text-align: justify;
+  font-size: 3vh;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.divider {
+  border-width: 2px !important;
+  border-color: white !important;
+  height: 100%;
+}
+</style>
