@@ -20,5 +20,16 @@ export default {
   },
   getUserData: async () => {
     return await Vue.axios.get("https://api.spotify.com/v1/me");
+  },
+  getBoomyTracks: async () => {
+    return await Vue.axios.get("https://api.spotify.com/v1/search?q=label:boomy&type=track");
+  },
+  createUserPlaylist: async (emoji) => {
+    console.log(emoji)
+    const data = {'name': `${emoji} - Boomy`, 'public': 'true'}
+    return await Vue.axios.post("https://api.spotify.com/v1/users/1239638484/playlists", data);
+  },
+  populatePlaylist: async (data, playlistId) => {
+    return await Vue.axios.post(`https://api.spotify.com/v1/playlists/${playlistId}/tracks`, data);
   }
 };

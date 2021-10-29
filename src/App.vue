@@ -22,7 +22,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: white;
   background-image: url("./assets/pngs/starry_background_fixed.png");
+  background-size: cover;
   height: 100vh;
+
 }
 h2 {
   padding: 20px;

@@ -29,10 +29,10 @@ const routes = [
     ]
   },
   {
-    path: "/search",
-    name: "Search",
+    path: "/generate",
+    name: "Generate",
     component: () =>
-      import(/* webpackChunkName: "user" */ "../views/Search.vue"),
+      import(/* webpackChunkName: "user" */ "../views/Generate.vue"),
     meta: { requiresAuth: true }
   },
   {
