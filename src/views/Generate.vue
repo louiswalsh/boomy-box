@@ -2,7 +2,9 @@
   <div class="about">
     <h1>Generate Playlist</h1>
     <v-divider class="divider"></v-divider>
-    <v-btn elevation="2" @click="findSongs" class="button">Click here - 🚀</v-btn>
+    <v-btn elevation="2" @click="findSongs" class="button"
+      >Click here - 🚀</v-btn
+    >
   </div>
 </template>
 
@@ -18,7 +20,7 @@ export default {
   methods: {
     async findSongs() {
       try {
-        const response = await store.getBoomyTracks();
+        const response = await store.getBoomyTracks(this.randomIntFromInterval(0, 400));
         this.responseSongs = response.data.tracks.items.map((a) => a.uri);
         this.createPlaylist();
       } catch (error) {
@@ -47,9 +49,9 @@ export default {
     },
     getRandomEmoji() {
       var result = "";
-      var characters = "🤖🎃🌙🌨🍋🥞🍪🏀🏆🥇🎬🎤🎧🎼🎹🥁🛸🎙💎🔮🧲💿🏝🚨🎸🧂";
+      var characters = ["🤖","🎃","🌙","🌨","🍋","🥞","🍪","🏀","🏆","🥇","🎬","🎤","🎧","🎼","🎹","🥁","🛸","🎙","💎","🔮","🧲","💿","🏝","🚨","🎸","🧂"];
       const rndInt = this.randomIntFromInterval(1, characters.length);
-      result = characters.charAt(rndInt);
+      result = characters[rndInt];
       return result;
     },
     randomIntFromInterval(min, max) {

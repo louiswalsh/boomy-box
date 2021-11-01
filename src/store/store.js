@@ -21,8 +21,8 @@ export default {
   getUserData: async () => {
     return await Vue.axios.get("https://api.spotify.com/v1/me");
   },
-  getBoomyTracks: async () => {
-    return await Vue.axios.get("https://api.spotify.com/v1/search?q=label:boomy&type=track");
+  getBoomyTracks: async (offset) => {
+    return await Vue.axios.get(`https://api.spotify.com/v1/search?q=label:boomy&type=track&offset=${offset}`);
   },
   createUserPlaylist: async (emoji) => {
 
